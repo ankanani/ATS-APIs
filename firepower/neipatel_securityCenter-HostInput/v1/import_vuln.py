@@ -88,7 +88,7 @@ while processing:
     returned = int(response["returnedRecords"])
     if page_end >= size:
         # this means there is only one page or this is the last page to process so we can finish processing
-        csv.write("ScanFlush\n")
+        csv.write("ScanUpdate\n")
         csv.close()
         processing = False
     else:
@@ -156,7 +156,7 @@ def updateVulns (SC, processing):
         returned = int(response["returnedRecords"])
         if page_end >= size:
             # this means there is only one page or this is the last page to process so we can finish processing
-            csv.write("ScanFlush\n")
+            csv.write("ScanUpdate\n")
             csv.close()
             processing = False
         else:
